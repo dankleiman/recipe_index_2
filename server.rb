@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
+require 'pry'
 
 require_relative 'models/recipe'
 require_relative 'models/ingredient'
@@ -15,6 +16,7 @@ end
 
 get '/recipes' do
   @recipes = Recipe.all
+  binding.pry
   erb :'recipes/index'
 end
 
